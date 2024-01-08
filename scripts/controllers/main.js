@@ -1322,9 +1322,9 @@ App.controller('Main', function ($scope, $timeout, $location, Api, tmhDynamicLoc
    };
 
    $scope.climateTarget = function (item, entity) {
-      const value = entity.attributes.temperature || [
-         entity.attributes.target_temp_low,
-         entity.attributes.target_temp_high,
+      const value = entity.attributes.current_temperature || [
+         entity.attributes.min_temp,
+         entity.attributes.max_temp,
       ].join(' - ');
 
       if (item.filter) {
